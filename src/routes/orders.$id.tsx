@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ExternalLink, FileText, CreditCard, Calendar, Truck } from "lucide-react";
 import { getOrderById } from "@/lib/mock-data";
+import type { Product } from "@/types/order";
 import { MerchantAvatar } from "@/components/merchant-avatar";
 import { StatusBadge } from "@/components/status-badge";
 import { Timeline } from "@/components/timeline";
@@ -73,7 +74,7 @@ function OrderDetail() {
           <section className="rounded-2xl border bg-card p-5">
             <h2 className="text-sm font-semibold">Items</h2>
             <ul className="mt-3 divide-y">
-              {order.products.map((p: typeof order.products[number]) => (
+              {order.products.map((p: Product) => (
                 <li key={p.id} className="flex items-center justify-between py-3 first:pt-0 last:pb-0">
                   <div>
                     <div className="text-sm font-medium">{p.name}</div>
