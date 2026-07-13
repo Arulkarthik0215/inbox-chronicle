@@ -73,7 +73,7 @@ function OrderDetail() {
           <section className="rounded-2xl border bg-card p-5">
             <h2 className="text-sm font-semibold">Items</h2>
             <ul className="mt-3 divide-y">
-              {order.products.map((p) => (
+              {order.products.map((p: typeof order.products[number]) => (
                 <li key={p.id} className="flex items-center justify-between py-3 first:pt-0 last:pb-0">
                   <div>
                     <div className="text-sm font-medium">{p.name}</div>
